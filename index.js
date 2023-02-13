@@ -2,7 +2,8 @@
 //----------
 
 import { } from 'dotenv/config';
-const TOKEN = process.env.TOKEN
+const TOKEN = process.env.TOKEN;
+const APPLICATION_ID = process.env.APPLICATION_ID
 import { Client, Events, GatewayIntentBits } from 'discord.js';
 
 // Create a new client instance
@@ -24,7 +25,7 @@ client.login(TOKEN);
 
 //-------------
 import selfcore from "selfcore";
-const gateway = new selfcore.Gateway("MTA3NDU4NjQxNDI5MDg0OTgxMw.GLCFIV.WBtsxY-doqBSqumK-YEx0Q1ZsqjJpDfbxZCh8o");
+const gateway = new selfcore.Gateway(APPLICATION_ID);
 
 gateway.on("message", m => {
     if (m.channel_id === "1074605389926125600") { //discord server 2
